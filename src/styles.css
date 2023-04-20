@@ -7,3 +7,20 @@ a {
   color: white;
   text-decoration: none;
 }
+.active{
+  color: red;
+  margin: 10px;
+}
+.navLink{
+  margin: 10px;
+}
+.card{
+  display: 'flex';
+  justify-content: 'center';
+  align-items: center;
+  height: '100vh';
+  border: none;
+}
+.card-container{
+  border: solid .5px rgb(187, 183, 183);
+}

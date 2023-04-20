@@ -1,17 +1,18 @@
 import { Navbar, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
+import "../styles.css"
 
 export default function Navigation() {
   return (
     <>
-      <Navbar bg="danger" variant="danger">
+      <Navbar bg="dark" variant="dark">
         <Container className="space-between">
           <div>
-            <Link to="/" className="text-white ms-3 text-decoration-none">🏠Home</Link>
-            <Link to="/contacto" className="text-white ms-3 text-decoration-none">📒Contacto</Link>        
+            <a href="/"><img src="logo.png" alt="logo" /></a>  
           </div>
           <div>
-            <h5 className="text-white">Happy Cake<span> 🍰</span></h5>
+            <NavLink className={({isActive})=>(isActive ? "active" : "navLink")} to="/">Home</NavLink>
+            <NavLink className={({isActive})=>(isActive ? "active" : "navLink")} to="/pokemons">Pokemons</NavLink>      
           </div>
         </Container>
       </Navbar>

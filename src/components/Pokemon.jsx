@@ -16,7 +16,7 @@ export default function Pokemons() {
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const irAPokemon = () => {
-    navigate(`/pokemon/${name}`);
+    navigate(`/pokemons/${name}`);
   };
   return (
     <div className="mt-5">

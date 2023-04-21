@@ -8,6 +8,7 @@ import "../styles.css"
 
 export const SelectedPokemon = ({ name }) => {
   const { pokemons } = useContext(Context);
+  console.log(name);
 
   const [url, setUrl] = useState('');
   const [pokemonInfo, setPokemonInfo] = useState({});
@@ -25,6 +26,7 @@ export const SelectedPokemon = ({ name }) => {
       if (!url) return;
       const response = await fetch(url);
       const data = await response.json();
+      console.log(data.stats[0].base_stat);
       setPokemonInfo(data);
     };
     fetchData();
@@ -36,10 +38,10 @@ export const SelectedPokemon = ({ name }) => {
         <Card style={{ width: '18rem' }} className='card-container'>
           <Card.Img
             variant="top"
-            src={pokemonInfo.sprites.front_default}
+            src={pokemonInfo.sprites?.front_default}
           />
           <Card.Body>
-            <Card.Title><strong>{name}</strong></Card.Title>
+            <Card.Title>{name}</Card.Title>
           </Card.Body>
           <ListGroup className="list-group-flush">              
               <ListGroup.Item>Hp: {pokemonInfo.stats[0].base_stat}</ListGroup.Item>

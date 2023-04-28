@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 
 export default function Pokemons() {
 
-  const {pokemons} = useContext(Context)
+  const {pokemons} = useContext (Context)
 
 
   const [name, setName] = useState("");

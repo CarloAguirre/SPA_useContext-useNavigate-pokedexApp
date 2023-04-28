@@ -1,18 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./views/Home";
 import NotFound from "./views/NotFound";
 import Pokemons from "./views/Pokemons";
 import Context from "./context";
 import { useEffect, useState } from "react";
 import PokemonCard from "./views/PokemonCard";
+import Home from "./views/Home";
 
 
 
 function App() {
 
-  const [pokemons, setPokemons] = useState([])
+  const [pokemons, setPokemons] = useState([]);
+
 
   useEffect(() => {
     const pokemonNamesFetch = async()=>{
@@ -24,8 +25,6 @@ function App() {
     pokemonNamesFetch()
   }, [])
   
-
-
   const globalState = {pokemons}
 
   return (
@@ -35,8 +34,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/pokemons" element={<Pokemons />}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/pokemon" element={<Pokemons />}/>
           <Route path="/*" element={<NotFound />}/>
           <Route path="/pokemon/:name" element={<PokemonCard />}/>
         </Routes>

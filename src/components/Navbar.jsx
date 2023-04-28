@@ -12,7 +12,7 @@ export default function Navigation() {
           </div>
           <div>
             <NavLink className={({isActive})=>(isActive ? "active" : "navLink")} to="/">Home</NavLink>
-            <NavLink className={({isActive})=>(isActive ? "active" : "navLink")} to="/pokemons">Pokemons</NavLink>      
+            <NavLink className={({isActive})=>(isActive ? "active" : "navLink")} to="/pokemon">Pokemons</NavLink>      
           </div>
         </Container>
       </Navbar>
